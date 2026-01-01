@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Rahman | Full-Stack ASP.NET Developer</title>
+    <meta name="description"
+        content="Portfolio of Abdul Rahman, a Full-Stack ASP.NET Developer specialized in scalable enterprise applications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Small inline utility for fade-in class handled by JS */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AR</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+            <a href="assets/resume.pdf" class="btn btn-sm" style="padding: 8px 16px; font-size: 0.85rem;">Resume</a>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero container">
+        <div class="hero-content">
+            <span class="hero-subtitle">Hi, my name is</span>
+            <h1 class="hero-title">Abdul Rahman.</h1>
+            <h2 class="hero-title" style="color: var(--text-secondary);">I build scalable enterprise solutions.</h2>
+            <p class="hero-description">
+                I am a Full-Stack ASP.NET Developer based in Chennai, specializing in building high-performance
+                applications using ASP.NET WebForms, MVC, and SQL Server. Currently focused on modernizing legacy
+                systems and banking enterprise solutions.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="assets/resume.pdf" class="btn">Download Resume</a>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section container">
+        <h2 class="section-title"><span
+                style="color: var(--accent-color); font-size: 1.5rem; margin-right: 10px;">01.</span>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Hello! My name is Abdul and I enjoy creating things that live on the internet. My interest in web
+                    development started back in 2023 when I decided to pivot into tech, and I've been learning and
+                    building ever since.
+                </p>
+                <p>
+                    Fast-forward to today, and I've had the privilege of working at <span
+                        style="color: var(--accent-color);">Cogent Innovations</span>, creating enterprise-grade
+                    software for major banking clients like <strong>SBI</strong> and <strong>AXIS Bank</strong>.
+                </p>
+                <p>
+                    My main focus these days is building accessible, inclusive products and digital experiences for a
+                    variety of clients. I also recently started learning <strong>Angular</strong> and <strong>ASP.NET
+                        Core</strong> to expand my full-stack capabilities.
+                </p>
+                <p>Here are a few technologies I've been working with recently:</p>
+                <ul
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                    <li>▹ C# & .NET Framework</li>
+                    <li>▹ ASP.NET WebForms & MVC</li>
+                    <li>▹ MS SQL Server</li>
+                    <li>▹ JavaScript (ES6+)</li>
+                    <li>▹ Bootstrap & HTML5</li>
+                    <li>▹ Web APIs (REST/SOAP)</li>
+                </ul>
+            </div>
+            <!-- Profile Image -->
+            <div class="about-img">
+                <div class="img-wrapper">
+                    <img src="assets/profile.jpg" alt="Abdul Rahman - Full Stack Developer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section container">
+        <h2 class="section-title"><span
+                style="color: var(--accent-color); font-size: 1.5rem; margin-right: 10px;">02.</span>Skills & Expertise
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">ASP.NET WebForms</span>
+                    <span class="skill-tag">ASP.NET MVC</span>
+                    <span class="skill-tag">ASP.NET Core</span>
+                    <span class="skill-tag">Web API</span>
+                    <span class="skill-tag">Entity Framework</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">jQuery</span>
+                    <span class="skill-tag">Bootstrap 5</span>
+                    <span class="skill-tag">Angular (Beginner)</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Database</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">MS SQL Server</span>
+                    <span class="skill-tag">T-SQL</span>
+                    <span class="skill-tag">Stored Procedures</span>
+                    <span class="skill-tag">SSMS</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Others</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Tortoise SVN</span>
+                    <span class="skill-tag">IIS</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">OOP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section container">
+        <h2 class="section-title"><span
+                style="color: var(--accent-color); font-size: 1.5rem; margin-right: 10px;">03.</span>Experience</h2>
+        <div style="border-left: 2px solid var(--secondary-color); padding-left: 20px; margin-left: 10px;">
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: var(--text-primary); margin-bottom: 5px;">Software Developer</h3>
+                <h4 style="color: var(--accent-color); font-size: 1rem; margin-bottom: 10px;">Cogent Innovations (P) Ltd
+                </h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px;">Dec 2023 - Present</p>
+                <ul style="list-style: disc; padding-left: 20px; color: var(--text-secondary);">
+                    <li style="margin-bottom: 10px;">Maintained and enhanced core enterprise web applications using
+                        ASP.NET WebForms and MS SQL Server.</li>
+                    <li style="margin-bottom: 10px;">Developed and optimized Stored Procedures and complex SQL queries
+                        for high-volume banking transaction data.</li>
+                    <li style="margin-bottom: 10px;">Automated manual processes in the Merchant Management System (MMS),
+                        reducing data entry errors by 40%.</li>
+                    <li style="margin-bottom: 10px;">Integrated third-party APIs (PhonePe, BharatPe) and developed
+                        internal RESTful services for data synchronization.</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="color: var(--text-primary); margin-bottom: 5px;">.NET Developer Intern</h3>
+                <h4 style="color: var(--accent-color); font-size: 1rem; margin-bottom: 10px;">Anew Technologies</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px;">Jul 2023 - Dec 2023</p>
+                <ul style="list-style: disc; padding-left: 20px; color: var(--text-secondary);">
+                    <li style="margin-bottom: 10px;">Assisted in developing MVC applications and learning the .NET
+                        ecosystem.</li>
+                    <li style="margin-bottom: 10px;">Worked on bug fixes and minor feature enhancements for client web
+                        portals.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section container">
+        <h2 class="section-title"><span
+                style="color: var(--accent-color); font-size: 1.5rem; margin-right: 10px;">04.</span>Some Things I've
+            Built</h2>
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-folder" style="color: var(--accent-color);">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <!-- External Link Icon if applicable -->
+                </div>
+                <h3 class="project-title">Merchant Management System (MMS)</h3>
+                <p class="project-description">
+                    An enterprise CRM for <strong>SBI & AXIS Bank</strong> to manage the lifecycle of POS machines.
+                    Features include Maker-Checker workflow, inventory management, and API integration with aggregators
+                    like PhonePe.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-item">ASP.NET WebForms</span>
+                    <span class="tech-item">C#</span>
+                    <span class="tech-item">MS SQL</span>
+                    <span class="tech-item">jQuery</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-folder" style="color: var(--accent-color);">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="project-title">Centralized HelpDesk System</h3>
+                <p class="project-description">
+                    A multi-channel ticketing system consolidating requests from WhatsApp, Telegram, Email, and Teams.
+                    Streamlined support operations for banking terminals.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-item">ASP.NET MVC</span>
+                    <span class="tech-item">Web API</span>
+                    <span class="tech-item">SQL Server</span>
+                    <span class="tech-item">Bootstrap</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-folder" style="color: var(--accent-color);">
+                        <path
+                            d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2-2z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="project-title">InKarps - Modernization</h3>
+                <p class="project-description">
+                    Led the migration of legacy Classic ASP pages to modern ASP.NET for a logistics application.
+                    Improved UI consistency and maintainability while preserving complex business logic.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-item">Classic ASP</span>
+                    <span class="tech-item">Legacy Migration</span>
+                    <span class="tech-item">UI/UX Refactor</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-folder" style="color: var(--accent-color);">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2-2z"></path>
+                    </svg>
+                </div>
+                <h3 class="project-title">AOC Services</h3>
+                <p class="project-description">
+                    Developed service management modules for Art of Color (Philips sub-brand), handling service requests
+                    and technician allocations.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-item">ASP.NET</span>
+                    <span class="tech-item">SQL</span>
+                    <span class="tech-item">HTML/CSS</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section container">
+        <div class="contact-container">
+            <p style="color: var(--accent-color); margin-bottom: 20px;">05. What's Next?</p>
+            <h2 class="section-title" style="font-size: 3rem; margin-bottom: 20px;">Get In Touch</h2>
+            <p style="margin: 0 auto 50px auto;">
+                I am currently looking for new opportunities as a .NET Developer. Whether you have a question or just
+                want to say hi, my inbox is always open!
+            </p>
+
+            <a href="mailto:abdulrahmanonwork@gmail.com" class="btn btn-primary"
+                style="padding: 15px 30px; font-size: 1.1rem;">Say Hello</a>
+
+            <div class="contact-form">
+                <!-- Simple contact form layout for visual completeness -->
+                <!-- Note: To make this functional, consider using Services like Formspree or EmailJS -->
+                <form action="mailto:abdulrahmanonwork@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by Abdul Rahman</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">© 2026 Abdul Rahman</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
