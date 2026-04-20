@@ -371,6 +371,22 @@ nav {
     color: var(--accent-color);
 }
 
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    border-bottom-color: var(--accent-color);
+    transform: translateX(4px);
+}
+
 /* Contact Section */
 .contact-container {
     text-align: center;
