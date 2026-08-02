@@ -1,4 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Scroll progress bar + nav shadow
+    const scrollProgress = document.getElementById('scroll-progress');
+    const siteNav = document.getElementById('site-nav');
+    const backToTop = document.getElementById('back-to-top');
+
+    function onScroll() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+        if (scrollProgress) scrollProgress.style.width = pct + '%';
+        if (siteNav) siteNav.classList.toggle('scrolled', scrollTop > 10);
+        if (backToTop) backToTop.classList.toggle('visible', scrollTop > 500);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (backToTop) {
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Scroll-spy: highlight the nav link for the section in view
+    const navAnchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const spySections = Array.from(navAnchorLinks)
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    if (spySections.length) {
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navAnchorLinks.forEach(link => {
+                        link.classList.toggle('active-link', link.getAttribute('href') === '#' + id);
+                    });
+                }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+        spySections.forEach(section => spyObserver.observe(section));
+    }
+
+    // Hero role rotator
+    const roleEl = document.getElementById('role-rotator');
+    if (roleEl) {
+        const roles = [
+            'enterprise-grade web apps',
+            'IoT-connected smart home platforms',
+            'scalable APIs & backends',
+            'clean, modern user interfaces'
+        ];
+        let roleIndex = 0;
+        setInterval(() => {
+            roleIndex = (roleIndex + 1) % roles.length;
+            roleEl.textContent = roles[roleIndex];
+        }, 3200);
+    }
+
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -48,6 +109,57 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.add('fade-in-section');
         observer.observe(section);
     });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Staggered reveal for grid/list children
+    const staggerGroups = document.querySelectorAll('.skills-grid, .projects-grid, .timeline');
+    const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                staggerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    staggerGroups.forEach(group => {
+        Array.from(group.children).forEach((child, index) => {
+            child.style.setProperty('--stagger-index', index);
+            staggerObserver.observe(child);
+        });
+    });
+
+    // 3D tilt on project cards, following the cursor
+    if (canHover && !reduceMotion) {
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const cx = rect.width / 2;
+                const cy = rect.height / 2;
+                const rotateX = ((e.clientY - rect.top - cy) / cy) * -5;
+                const rotateY = ((e.clientX - rect.left - cx) / cx) * 5;
+                card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Magnetic pull for buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.18}px, ${y * 0.35 - 3}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+    }
 
     // Contact form submission via EmailJS
     const contactForm = document.getElementById('contact-form');
